@@ -24,7 +24,7 @@ pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
-# using nornamlize functions -
+# using normalize functions -
 def main():
     with open('sample_api_output.json','r',encoding='Utf8', errors='replace') as f:
         data=json.load(f)
@@ -33,7 +33,7 @@ def main():
         #result = json_normalize(json.load(f), record_path=['schoolDistrict','schools'],meta=['address','city','medianHouseValue','zip',['schoolDistrict','districtId']]) #2nd level
         result = json_normalize(json.load(f), record_path=['schoolDistrict','schools','faculty'],meta=['address','city','medianHouseValue','zip',['schoolDistrict','districtId'],['schoolDistrict','schools','schoolGrade'],['schoolDistrict','schools','schoolName']])#3rd level
         print(result)  #prints normlized data with all3levels
-        # create sql from above result data from and laod to db
+        # create sql from above data and load to db
 # using loops
 def main1():
     with open('sample_api_output.json','r',encoding='Utf8', errors='replace') as f:
